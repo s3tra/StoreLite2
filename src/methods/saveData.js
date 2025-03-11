@@ -11,8 +11,7 @@ const saveData = async (data) => {
 
   try {
     const existingData = await getData(data._key);
-    if (existingData)
-      return console.warn('Unable to save data, the key is already in use.');
+    if (existingData) data = { ...existingData, ...data };
 
     let file;
     try {
