@@ -23,8 +23,16 @@ const saveData = async (data) => {
 
     const obj = await JSON.parse(file);
 
-    const nextKey = Object.keys(obj) + 1;
-    obj[nextKey] = data;
+    const nextKey = Object.keys(obj).length + 1;
+    const existingDataKey = Object.keys(obj).find(
+      (key) => obj[key]._key === data._key
+    );
+
+    if (existingDataKey) {
+      obj[existingDataKey] = data;
+    } else {
+      obj[nextKey] = data;
+    }
 
     await fs.writeFile(filePath, JSON.stringify(obj));
     return true;
