@@ -34,7 +34,7 @@ const saveData = async (data) => {
       obj[nextKey] = data;
     }
 
-    await fs.writeFile(filePath, JSON.stringify(obj));
+    await fs.writeFile(filePath, JSON.stringify(obj, null, 2));
     return true;
   } catch (error) {
     console.error('Unable to save data:', error);
