@@ -1,6 +1,6 @@
 {
   "name": "storelite2",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "StoreLite2 is a lightweight npm package for storing and retrieving data using JSON files.",
   "homepage": "https://github.com/s3tra/StoreLite2#readme",
   "bugs": {
@@ -13,7 +13,7 @@
   "license": "MIT",
   "author": "s3tra",
   "type": "module",
-  "main": "src/index.ts",
+  "main": "./dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

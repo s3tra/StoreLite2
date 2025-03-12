@@ -1,7 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 
-import { type data } from '../types/data.ts';
+import { type data } from '../types/data.js';
 
 const filePath = path.resolve('data.json');
 
@@ -14,7 +14,7 @@ const getData = async (key: string): Promise<data | null> => {
   let file: string = '{}';
   try {
     file = await fs.readFile(filePath, 'utf-8');
-  } catch (error) {
+  } catch (error: any) {
     if (error.code == 'ENOENT')
       await fs.writeFile(filePath, JSON.stringify({}));
   }

@@ -1,8 +1,8 @@
 import fs from 'fs/promises';
 import path from 'path';
 
-import { type data } from '../types/data.ts';
-import getData from './getData.ts';
+import { type data } from '../types/data.js';
+import getData from './getData.js';
 
 const filePath = path.resolve('data.json');
 
@@ -27,8 +27,8 @@ const saveData = async (data: data): Promise<boolean> => {
     const obj: object = await JSON.parse(file);
 
     const nextKey: number = Object.keys(obj).length + 1;
-    const existingDataKey: string = Object.keys(obj).find(
-      (key: string) => obj[key]._key === data._key
+    const existingDataKey: string | undefined = Object.keys(obj).find(
+      (i: string) => obj[i]._key === data._key
     );
 
     if (existingDataKey) {
