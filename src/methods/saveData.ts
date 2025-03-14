@@ -24,11 +24,11 @@ const saveData = async (data: dataType): Promise<boolean> => {
         await fs.writeFile(filePath, JSON.stringify({}));
     }
 
-    const obj: object = await JSON.parse(file);
+    const obj: { [key: string]: dataType } = await JSON.parse(file);
 
     const nextKey: number = Object.keys(obj).length + 1;
     const existingDataKey: string | undefined = Object.keys(obj).find(
-      (i: string) => obj[i]._key === data._key
+      (i) => obj[i]._key === data._key
     );
 
     if (existingDataKey) {
