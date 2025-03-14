@@ -1,11 +1,11 @@
 import fs from 'fs/promises';
 import path from 'path';
 
-import { type data } from '../types/data.js';
+import { type dataType } from '../types/data.js';
 
 const filePath = path.resolve('data.json');
 
-const getData = async (key: string): Promise<data | null> => {
+const getData = async (key: string): Promise<dataType | null> => {
   if (!key) {
     console.error('Unable to get data, missing required parameter: key');
     return null;

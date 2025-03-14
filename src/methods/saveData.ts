@@ -1,19 +1,19 @@
 import fs from 'fs/promises';
 import path from 'path';
 
-import { type data } from '../types/data.js';
+import { type dataType } from '../types/data.js';
 import getData from './getData.js';
 
 const filePath = path.resolve('data.json');
 
-const saveData = async (data: data): Promise<boolean> => {
+const saveData = async (data: dataType): Promise<boolean> => {
   if (!data || !data._key) {
     console.error('Unable to save data, missing required value: _key');
     return false;
   }
 
   try {
-    const existingData: data | null = await getData(data._key);
+    const existingData: dataType | null = await getData(data._key);
     if (existingData) data = { ...existingData, ...data };
 
     let file: string = '{}';

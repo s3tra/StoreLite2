@@ -1,6 +1,6 @@
 {
   "name": "storelite2",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "description": "StoreLite2 is a lightweight npm package for storing and retrieving data using JSON files.",
   "homepage": "https://github.com/s3tra/StoreLite2#readme",
   "bugs": {
