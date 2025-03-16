@@ -21,7 +21,6 @@ const getData = async (key: string): Promise<dataType | null | object> => {
 
   try {
     const obj: object = await JSON.parse(file);
-    if (key == '') return obj;
 
     for (const entry of Object.values(obj)) {
       if (entry._key == key) return entry;
