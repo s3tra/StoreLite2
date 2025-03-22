@@ -5,8 +5,10 @@ import { type dataType } from '../types/data.js';
 
 const filePath = path.resolve('data.json');
 
-const getData = async (key: string): Promise<dataType | null | object> => {
-  if (!key) {
+const getData = async (
+  key: string | true
+): Promise<dataType | object | null> => {
+  if (key === undefined || key === null) {
     console.error('Unable to get data, missing required parameter: key');
     return null;
   }
@@ -21,6 +23,10 @@ const getData = async (key: string): Promise<dataType | null | object> => {
 
   try {
     const obj: object = await JSON.parse(file);
+
+    if (key === true) {
+      return obj;
+    }
 
     for (const entry of Object.values(obj)) {
       if (entry._key == key) return entry;

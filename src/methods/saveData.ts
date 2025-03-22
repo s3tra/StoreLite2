@@ -13,7 +13,7 @@ const saveData = async (data: dataType): Promise<boolean> => {
   }
 
   try {
-    const existingData: dataType | null = await getData(data._key);
+    const existingData: dataType | object | null = await getData(data._key);
     if (existingData) data = { ...existingData, ...data };
 
     let file: string = '{}';
