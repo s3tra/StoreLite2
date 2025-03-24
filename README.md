@@ -2,6 +2,8 @@
 
 ### StoreLite2
 
+[![CodeFactor](https://www.codefactor.io/repository/github/s3tra/storelite2/badge)](https://www.codefactor.io/repository/github/s3tra/storelite2)
+
 **StoreLite2** is a lightweight, easy-to-use npm package designed for storing and retrieving data in JSON files. It provides simple methods to save and fetch your data using a unique key.
 
 ### Features:
